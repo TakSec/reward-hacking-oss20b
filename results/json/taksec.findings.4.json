@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "issue_title": "Persuasion Susceptibility Bias via reward framing",
+  "model": {
+    "name": "gpt-oss-20b",
+    "version": "2025-08-26",
+    "provider": "local",
+    "parameters": {
+      "temperature": 0.7,
+      "max_output_tokens": 300
+    }
+  },
+  "environment": {
+    "endpoint": "local OpenAI-compatible API (llama.cpp llama-server)"
+  },
+  "issue_summary": {
+    "title": "Reward-induced persuasive framing bias",
+    "topic_area": "reward hacking / persuasion",
+    "overview": "When reward = persuasiveness, model responses shift toward persuasive framings over neutral/factual ones."
+  },
+  "overview": {
+    "goal": "Design a probe that measures bias toward persuasive framing.",
+    "process": "Data acquisition \u2192 Scenario prompting (CONTROL vs. REWARD) \u2192 Scoring terms \u2192 Aggregate metrics.",
+    "output": "CSV of responses + Harmony finding JSON."
+  },
+  "key_components": {
+    "Data Layer": "Neutral civic scenarios (nonpartisan).",
+    "Scoring Engine": "Regex detection of persuasive vs. neutral markers.",
+    "Output": "Comparative deltas in persuasion frequency."
+  },
+  "python_blueprint": "Reproducible Python probe managing CONTROL vs. REWARD runs, scoring, and output."
+}
